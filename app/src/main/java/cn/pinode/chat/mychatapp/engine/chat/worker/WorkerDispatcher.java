@@ -1,9 +1,9 @@
-package cn.pinode.chat.mychatapp.engine.worker;
+package cn.pinode.chat.mychatapp.engine.chat.worker;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-import cn.pinode.chat.mychatapp.engine.worker.enums.DispatchState;
+import cn.pinode.chat.mychatapp.engine.chat.worker.enums.DispatchState;
 
 /**
  * @date on 2018年11月1日14:48:16
@@ -39,6 +39,10 @@ public class WorkerDispatcher {
      * @return false  任务满了，需要等待 true 任务进栈成功
      */
     public boolean pushTask(ITransWorker transWorker){
+        if (!transWorker.isValid()){
+            transWorker.notifyError();
+            return false;
+        }
         switch (state){
             case NOP:
             case ABORT:

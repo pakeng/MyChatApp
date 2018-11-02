@@ -1,4 +1,4 @@
-package cn.pinode.chat.mychatapp.engine.transmitter;
+package cn.pinode.chat.mychatapp.engine.chat.transmitter;
 
 /**
  * @date on 2018年11月1日17:00:55

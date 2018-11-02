@@ -1,4 +1,4 @@
-package cn.pinode.chat.mychatapp.engine.transmitter;
+package cn.pinode.chat.mychatapp.engine.chat.transmitter;
 
 import java.io.IOException;
 import java.io.OutputStream;

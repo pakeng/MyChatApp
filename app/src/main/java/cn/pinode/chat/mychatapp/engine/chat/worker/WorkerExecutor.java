@@ -1,4 +1,4 @@
-package cn.pinode.chat.mychatapp.engine.worker;
+package cn.pinode.chat.mychatapp.engine.chat.worker;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.RejectedExecutionHandler;

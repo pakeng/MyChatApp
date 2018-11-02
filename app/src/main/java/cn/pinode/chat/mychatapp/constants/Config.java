@@ -11,7 +11,7 @@ public class Config {
     public static final String S_TAG = "CHAT_SEVER";  // 服务型tag
     public static final String V_TAG = "CHAT_VIEW";  // 界面tag
 
-    public static final String SERVER_IP = "10.7.48.32";
+    public static final String SERVER_IP = "10.7.49.33";
     public static final String SERVER_PORT = "7789";
 
 

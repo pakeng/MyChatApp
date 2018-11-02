@@ -11,8 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import cn.pinode.chat.mychatapp.R;
-import cn.pinode.chat.mychatapp.engine.worker.MessageWorker;
-import cn.pinode.chat.mychatapp.engine.worker.WorkerDispatcher;
+import cn.pinode.chat.mychatapp.engine.builder.Builder;
+import cn.pinode.chat.mychatapp.engine.chat.worker.MessageWorker;
+import cn.pinode.chat.mychatapp.engine.chat.worker.WorkerDispatcher;
 
 /**
  * @date on 2018年10月31日15:23:48
@@ -73,8 +74,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.msg_send:
-                final String msg = send_edit.getText().toString();
-                MessageWorker messageWorker = new MessageWorker(msg);
+                // 构建 完整的 传送对象
+                MessageWorker messageWorker = new MessageWorker(
+                        Builder.buildTextMessage(
+                                send_edit.getText().toString(), "test"));
                 WorkerDispatcher.getInstance().pushTask(messageWorker);
                 break;
             default:

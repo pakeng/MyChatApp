@@ -1,4 +1,4 @@
-package cn.pinode.chat.mychatapp.engine.worker.enums;
+package cn.pinode.chat.mychatapp.engine.chat.worker.enums;
 
 public enum DispatchState {
     NOP, // 未初始化

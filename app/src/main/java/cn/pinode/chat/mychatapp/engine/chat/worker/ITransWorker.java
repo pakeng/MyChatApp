@@ -1,6 +1,6 @@
-package cn.pinode.chat.mychatapp.engine.worker;
+package cn.pinode.chat.mychatapp.engine.chat.worker;
 
-import cn.pinode.chat.mychatapp.engine.worker.enums.WorkerType;
+import cn.pinode.chat.mychatapp.engine.chat.worker.enums.WorkerType;
 
 /**
  * @date on 2018年11月1日13:31:45
@@ -25,12 +25,18 @@ public abstract class ITransWorker implements Runnable {
 
     // 广播失败信息 等待订阅信息的用户处理对应的错误
     public void notifyError(){
-
+        if (isValid()){
+            // 发送失败
+        }else {
+            // 消息不合法
+        }
     }
 
     // 广播成功信息 等待订阅信息的用户处理对应的
     public void notifySuccess(){
 
     }
+
+    public abstract boolean isValid();
 
 }

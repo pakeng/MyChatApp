@@ -1,9 +1,9 @@
-package cn.pinode.chat.mychatapp.engine.worker;
+package cn.pinode.chat.mychatapp.engine.chat.worker;
 
 import cn.pinode.chat.mychatapp.constants.Config;
-import cn.pinode.chat.mychatapp.engine.transmitter.MessageSendSocket;
-import cn.pinode.chat.mychatapp.engine.transmitter.SocketsFactory;
-import cn.pinode.chat.mychatapp.engine.worker.enums.WorkerType;
+import cn.pinode.chat.mychatapp.engine.chat.transmitter.MessageSendSocket;
+import cn.pinode.chat.mychatapp.engine.chat.transmitter.SocketsFactory;
+import cn.pinode.chat.mychatapp.engine.chat.worker.enums.WorkerType;
 
 /**
  * @date on 2018年11月1日11:06:25
@@ -28,5 +28,10 @@ public class MessageWorker extends ITransWorker {
             return;
         }
         notifyError();
+    }
+
+    @Override
+    public boolean isValid() {
+        return (this.msg != null)&&(!this.msg.isEmpty());
     }
 }
