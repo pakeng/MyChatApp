@@ -13,4 +13,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="back"><![CDATA[< Back]]></string>
+    <string name="msg_list">首页</string>
+    <string name="friends_list">联系人</string>
+    <string name="topic_list">看点</string>
+    <string name="friends_news">动态</string>
 </resources>

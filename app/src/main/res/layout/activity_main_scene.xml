@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.pinode.chat.mychatapp.view.widget.draglayout.DragLayout
+    android:id="@+id/dl"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context=".activity.MainActivity">
+
+    <include layout="@layout/main_left_view_layout"/>
+
+    <cn.pinode.chat.mychatapp.view.widget.draglayout.MainContentLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF">
+       <include layout="@layout/header_view" />
+
+    <FrameLayout
+        android:layout_below="@+id/header_view"
+        android:layout_above="@id/bottom_bar"
+        android:id="@+id/frame_container"
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <cn.pinode.chat.mychatapp.view.widget.BottomBar
+
+        android:layout_alignParentBottom="true"
+        android:background="#fefefe"
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        />
+        <FrameLayout
+            android:id="@+id/frame_container_mask"
+            android:background="#00000000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+    </cn.pinode.chat.mychatapp.view.widget.draglayout.MainContentLayout>
+
+</cn.pinode.chat.mychatapp.view.widget.draglayout.DragLayout>

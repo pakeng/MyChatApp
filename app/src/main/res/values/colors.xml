@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="lv_click_color">#77AAAAAA</color>
+    <color name="color_lv_selector">#aaeeeeee</color>
+    <color name="header_bg_color">#0CB8F6</color>
 </resources>

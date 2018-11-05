@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.pinode.chat.mychatapp.view.widget.HeaderView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_view"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_alignParentTop="true"
+    android:background="@color/header_bg_color"
+    android:gravity="center_vertical">
+
+    <ImageButton
+        android:id="@+id/header_left_img_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:src="@mipmap/icon_avatar_white"
+        android:scaleType="centerCrop"
+        android:contentDescription="left_img_btn"
+        android:background="@android:color/transparent" />
+        <LinearLayout
+            android:id="@+id/header_center_container"
+            android:layout_toRightOf="@+id/header_left_img_btn"
+            android:layout_toLeftOf="@id/header_right_img_btn"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/header_right_img_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:contentDescription="right_img_btn"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:scaleType="centerInside"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/icon_search"/>
+</cn.pinode.chat.mychatapp.view.widget.HeaderView>
