@@ -462,6 +462,7 @@ public class DragLayout extends FrameLayout {
      * <p>Even if the subclass overrides onFinishInflate, they should always be
      * sure to call the super method, so that we get called.
      */
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
@@ -482,6 +483,16 @@ public class DragLayout extends FrameLayout {
         mMainContentMask = mMainContent.findViewById(R.id.frame_container_mask);
         mMainContentMask.setBackgroundColor(Color.BLACK);
         mMainContentMask.setAlpha(0);
+        mMainContentMask.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (getStatus()==Status.OPEN){
+                    close(true);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
 

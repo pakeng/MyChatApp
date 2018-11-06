@@ -334,6 +334,16 @@ public class SwipeLayout extends FrameLayout {
         // 当xml被填充完毕时调用
         mBackView = getChildAt(0);
         mFrontView = getChildAt(1);
+        mFrontView.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (getStatus()==Status.Open){
+                    close(true);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     /**
