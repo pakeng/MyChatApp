@@ -1,5 +1,6 @@
 package cn.pinode.chat.mychatapp.view.widget;
 
+import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
@@ -277,7 +279,6 @@ public class ViscosityView extends View {
                             mListener.onReset(isOutToRange);
                     }
 
-
                 } else {
 
                     final PointF tempDragCircle = new PointF(mDragCircle.x, mDragCircle.y);
@@ -290,6 +291,28 @@ public class ViscosityView extends View {
                             float percent = mAnim.getAnimatedFraction();
                             PointF p = GeometryUtil.getPointByPercent(tempDragCircle, mFixedCircle, percent);
                             updataDragCircle(p.x, p.y);
+                        }
+                    });
+                    mAnim.addListener(new Animator.AnimatorListener() {
+                        @Override
+                        public void onAnimationStart(Animator animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            Log.e("red point", "animation end");
+                            removeDragCircle();
+                        }
+
+                        @Override
+                        public void onAnimationCancel(Animator animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animator animation) {
+
                         }
                     });
                     //差之器
@@ -315,6 +338,18 @@ public class ViscosityView extends View {
     private void updataDragCircle(float rawX, float rawY) {
         //更新的坐标
         mDragCircle.set(rawX, rawY);
+        invalidate();
+    }
+
+    /**
+     * 更新拖拽圆的圆心坐标
+     * 移除
+     */
+    private void removeDragCircle() {
+        this.setVisibility(View.GONE);
+        if (mListener!=null){
+            mListener.onReset(false);
+        }
         invalidate();
     }
 
