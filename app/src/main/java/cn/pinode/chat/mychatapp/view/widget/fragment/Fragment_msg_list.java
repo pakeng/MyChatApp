@@ -1,5 +1,6 @@
 package cn.pinode.chat.mychatapp.view.widget.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +19,8 @@ import cn.pinode.chat.mychatapp.R;
 import cn.pinode.chat.mychatapp.activity.ChatMainActivity;
 import cn.pinode.chat.mychatapp.view.adapter.DividerItemDecoration;
 import cn.pinode.chat.mychatapp.view.adapter.ItemRecycleAdapter;
-import cn.pinode.chat.mychatapp.view.widget.draglayout.DragLayout;
 import cn.pinode.chat.mychatapp.view.widget.HeaderView;
+import cn.pinode.chat.mychatapp.view.widget.draglayout.DragLayout;
 
 
 public class Fragment_msg_list extends Fragment {
@@ -26,10 +28,14 @@ public class Fragment_msg_list extends Fragment {
     private RecyclerView recyclerView;
     private List<String> mLists = new ArrayList<>();
     private ItemRecycleAdapter adapter;
-
+    private TextView title;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        title = new TextView(getContext());
+        title.setText("消息");
+        title.setTextColor(Color.WHITE);
+        title.setTextSize(20);
         return LayoutInflater.from(getActivity()).inflate(R.layout.fragment_msg_list, container, false);
     }
 
@@ -42,9 +48,22 @@ public class Fragment_msg_list extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        ((ChatMainActivity)getActivity()).getHeaderView().setCenterView(title);
         initRecycleView();
         initData();
         initListener();
+    }
+
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (hidden){
+
+        }else {
+            initListener();
+            ((ChatMainActivity)getActivity()).getHeaderView().setCenterView(title);
+        }
     }
 
     public void initListener(){

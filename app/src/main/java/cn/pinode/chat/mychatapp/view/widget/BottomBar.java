@@ -269,14 +269,7 @@ public class BottomBar extends View {
                 break;
         }
         return true;
-        //这里return super为什么up执行不到？是因为return super的值，全部取决于你是否
-        //clickable，当你down事件来临，不可点击，所以return false，也就是说，而且你没
-        //有设置onTouchListener，并且控件是ENABLE的，所以dispatchTouchEvent的返回值
-        //也是false，所以在view group的dispatchTransformedTouchEvent也是返回false，
-        //这样一来，view group中的first touch target就是空的，所以intercept标记位
-        //果断为false，然后就再也进不到循环取孩子的步骤了，直接调用dispatch-
-        // TransformedTouchEvent并传孩子为null，所以直接调用view group自身的dispatch-
-        // TouchEvent了
+
     }
 
     private int withinWhichArea(int x) { return x/parentItemWidth; }//从0开始

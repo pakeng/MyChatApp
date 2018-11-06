@@ -18,10 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboard|orientation|keyboardHidden|screenSize|navigation">
-        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="keyboard|orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="portrait"/>
 
         <service
             android:name=".service.ChatCoreService"
@@ -29,28 +29,29 @@
             android:exported="true" />
 
         <activity
-            android:name=".activity.LoginActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboard|orientation|keyboardHidden|screenSize|navigation">
+            android:name=".activity.Login2Activity"
+            android:configChanges="keyboard|orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.ChatMainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:configChanges="keyboard|orientation|keyboardHidden|screenSize|navigation"
             android:screenOrientation="portrait"
-            android:configChanges="keyboard|orientation|keyboardHidden|screenSize|navigation">
-        </activity>
-
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".activity.ChatRoomActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboard|orientation|keyboardHidden|screenSize|navigation">
-        </activity>
+            android:configChanges="keyboard|orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:configChanges="keyboard|orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="portrait"/>
 
     </application>
 

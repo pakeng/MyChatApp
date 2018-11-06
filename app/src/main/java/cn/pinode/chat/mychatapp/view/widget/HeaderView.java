@@ -1,12 +1,14 @@
 package cn.pinode.chat.mychatapp.view.widget;
 
-import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
 import cn.pinode.chat.mychatapp.R;
 
 public class HeaderView extends RelativeLayout implements View.OnClickListener {
@@ -27,12 +29,13 @@ public class HeaderView extends RelativeLayout implements View.OnClickListener {
         super(context, attrs, defStyleAttr);
     }
 
-    @SuppressLint("NewApi")
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public HeaderView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
     public void setCenterView(View view){
+        center_container.removeAllViews();
         center_container.addView(view);
     }
 

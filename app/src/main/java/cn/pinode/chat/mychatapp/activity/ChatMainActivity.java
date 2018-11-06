@@ -9,11 +9,11 @@ import android.widget.TextView;
 import cn.pinode.chat.mychatapp.R;
 import cn.pinode.chat.mychatapp.view.adapter.LeftItemAdapter;
 import cn.pinode.chat.mychatapp.view.widget.BottomBar;
-import cn.pinode.chat.mychatapp.view.widget.draglayout.DragLayout;
 import cn.pinode.chat.mychatapp.view.widget.HeaderView;
-import cn.pinode.chat.mychatapp.view.widget.fragment.Fragment2;
-import cn.pinode.chat.mychatapp.view.widget.fragment.Fragment3;
+import cn.pinode.chat.mychatapp.view.widget.draglayout.DragLayout;
+import cn.pinode.chat.mychatapp.view.widget.fragment.Fragment_friends_list;
 import cn.pinode.chat.mychatapp.view.widget.fragment.Fragment_msg_list;
+import cn.pinode.chat.mychatapp.view.widget.fragment.Fragment_topic;
 
 public class ChatMainActivity extends AppCompatActivity {
 
@@ -47,20 +47,20 @@ public class ChatMainActivity extends AppCompatActivity {
 
         BottomBar bottomBar = findViewById(R.id.bottom_bar);
         bottomBar.setContainer(R.id.frame_container)
-                .setTitleBeforeAndAfterColor("#999999", "#0CB8F6")
+                .setTitleBeforeAndAfterColor("#999999", "#0000FF")
                 .addItem(Fragment_msg_list.class,
                         getResources().getString(R.string.msg_list),
                         R.drawable.item1_before,
                         R.drawable.item1_after)
-                .addItem(Fragment2.class,
+                .addItem(Fragment_friends_list.class,
                         getResources().getString(R.string.friends_list),
                         R.drawable.item2_before,
                         R.drawable.item2_after)
-                .addItem(Fragment3.class,
+                .addItem(Fragment_topic.class,
                         getResources().getString(R.string.topic_list),
                         R.drawable.item3_before,
                         R.drawable.item3_after)
-                .addItem(Fragment3.class,
+                .addItem(Fragment_topic.class,
                         getResources().getString(R.string.friends_news),
                         R.drawable.item3_before,
                         R.drawable.item3_after)

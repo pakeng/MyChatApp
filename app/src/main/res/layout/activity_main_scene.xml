@@ -26,12 +26,11 @@
     </FrameLayout>
 
     <cn.pinode.chat.mychatapp.view.widget.BottomBar
-
         android:layout_alignParentBottom="true"
-        android:background="#fefefe"
+        android:background="@drawable/bottombar_bg"
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_gravity="bottom"
         />
         <FrameLayout
